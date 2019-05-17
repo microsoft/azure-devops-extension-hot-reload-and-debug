@@ -1,0 +1,55 @@
+{
+  "manifestVersion": 1,
+  "version": "1.0.0",
+  "name": "Hot Reload and Debug",
+  "description": "Use hot reload and debug directly in VS Code",
+  "publisher": "microsoft",
+  "demands": ["api-version/3.0"],
+  "categories": ["Azure Repos"],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    }
+  },
+  "icons": {
+    "default": "img/world.png"
+  },
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "img",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "hello-world-hub-group",
+      "type": "ms.vss-web.hub-group",
+      "description": "Sample hub group",
+      "targets": ["ms.vss-web.project-hub-groups-collection"],
+      "properties": {
+        "name": "Hello World!",
+        "icon": {
+          "dark": "img/world.png",
+          "light": "img/world.png"
+        }
+      }
+    },
+    {
+      "id": "default-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [".hello-world-hub-group"],
+      "properties": {
+        "uri": "dist/hub/hub.html"
+      }
+    }
+  ]
+}

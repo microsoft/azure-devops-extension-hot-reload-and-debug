@@ -1,0 +1,27 @@
+trigger:
+  - master
+pr:
+  - master
+
+pool:
+  vmImage: "ubuntu-latest"
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "10.x"
+    displayName: "Install Node.js"
+
+  - script: |
+      npm install
+    displayName: "npm install"
+
+  - script: |
+      npm run package
+    displayName: "Build and package"
+
+  - task: PublishPipelineArtifact@0
+    inputs:
+      artifactName: "vsix"
+      targetPath: "out"
+    displayName: "Publish vsix"

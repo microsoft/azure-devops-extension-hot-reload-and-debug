@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "target": "es6",
+    "rootDir": "src/",
+    "outDir": "dist/",
+    "jsx": "react",
+    "lib": ["es6", "dom"],
+    "types": ["react"]
+  },
+  "exclude": ["node_modules", "typings"]
+}
