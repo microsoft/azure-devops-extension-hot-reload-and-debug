@@ -122,7 +122,6 @@ The last configuration change we need to make is to set up a debug configuration
         }
       ]
     }
-    // ...
   ]
 }
 ```
