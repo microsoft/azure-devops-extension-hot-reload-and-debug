@@ -34,7 +34,7 @@ git clone https://github.com/microsoft/azure-devops-extension-hot-reload-and-deb
 ```shell
 npm install -g yo
 npm install -g @microsoft/generator-azure-devops-extension
-yo @microsoft/generator-azure-devops-extension
+yo @microsoft/azure-devops-extension
 ```
 
 ## Enabling an existing extension
