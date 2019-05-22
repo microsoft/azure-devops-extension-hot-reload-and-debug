@@ -1,5 +1,7 @@
 # Hot Reload and Debug
 
+[![Build Status](https://dev.azure.com/1es-cat/azure-devops-extension-hot-reload-and-debug/_apis/build/status/microsoft.azure-devops-extension-hot-reload-and-debug?branchName=master)](https://dev.azure.com/1es-cat/azure-devops-extension-hot-reload-and-debug/_build/latest?definitionId=26&branchName=master)
+
 This repository demonstrates how to load an Azure DevOps extension's code directly from the dev machine rather than bundle all the code and deploy it through the marketplace. We will leverage the (somewhat hidden) capability in Azure DevOps to load content from localhost, which will enable us to use hot reload and debug in VS Code.
 
 For more information about our motivation in developing this project, see our blog post.
