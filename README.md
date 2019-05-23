@@ -126,6 +126,10 @@ The last configuration change we need to make is to set up a debug configuration
 }
 ```
 
+## Using hot reload and debug
+
+Now that you have configured the extension, follow these steps to use hot reload and start debugging your code.
+
 ### Deploy your dev extension to Azure DevOps
 
 You will need to deploy your extension to the marketplace at least once using the following command:
