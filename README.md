@@ -99,6 +99,18 @@ module.exports = {
 
 > Your extension may load fine without this change because webpack will serve files from the filesystem if it does not have an in-memory version to serve instead. Therefore, webpack may serve files from the `dist` folder if it exists, but hot reload will not work.
 
+In order to make webpack copy HTML files from the `src` folder to the `dist` folder, you need to add the `copy-webpack-plugin` npm package to your project, and then add the following lines to your `webpack.config.json` file.  These changes will configure webpack to copy all HTML files from `src`:
+
+```js
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+// ...
+
+module.exports = {
+  plugins: [new CopyWebpackPlugin([{ from: "**/*.html", context: "src" }])],
+  // ...
+};
+```
+
 ### VS Code's launch.json
 
 The last configuration change we need to make is to set up a debug configuration for VS Code that launches Firefox with the correct path mappings. Add a path mapping with `url` set to `webpack:///` and `path` set to `${workspaceFolder}/`. To avoid restarting Firefox every time you debug, you can also set the `reAttach` property on the configuration to `true`.
