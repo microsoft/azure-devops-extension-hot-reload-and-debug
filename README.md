@@ -1,4 +1,4 @@
-# Hot Reload and Debug
+# Azure DevOps Extension Hot Reload and Debug
 
 [![Build Status](https://dev.azure.com/1es-cat/azure-devops-extension-hot-reload-and-debug/_apis/build/status/microsoft.azure-devops-extension-hot-reload-and-debug?branchName=master)](https://dev.azure.com/1es-cat/azure-devops-extension-hot-reload-and-debug/_build/latest?definitionId=26&branchName=master)
 
@@ -126,7 +126,7 @@ The last configuration change we need to make is to set up a debug configuration
 }
 ```
 
-## Using hot reload and debug
+## Using hot reload and debugging
 
 Now that you have configured the extension, follow these steps to use hot reload and start debugging your code.
 
