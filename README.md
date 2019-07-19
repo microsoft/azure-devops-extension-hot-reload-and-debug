@@ -142,6 +142,15 @@ The last configuration change we need to make is to set up a debug configuration
 
 Now that you have configured the extension, follow these steps to use hot reload and start debugging your code.
 
+### Install dependencies and build the extension
+
+Before we deploy the extension, we need to install its dependencies and build compile the code using the following commands:
+
+```shell
+npm install
+npm run compile:dev
+```
+
 ### Deploy your dev extension to Azure DevOps
 
 You will need to deploy your extension to the marketplace at least once using the following command:
