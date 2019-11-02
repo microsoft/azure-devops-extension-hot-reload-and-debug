@@ -144,7 +144,7 @@ Now that you have configured the extension, follow these steps to use hot reload
 
 ### Install dependencies and build the extension
 
-Before we deploy the extension, we need to install its dependencies and build compile the code using the following commands:
+Before we deploy the extension, we need to install its dependencies and compile the code using the following commands:
 
 ```shell
 npm install
