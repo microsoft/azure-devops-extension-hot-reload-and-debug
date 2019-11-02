@@ -148,7 +148,7 @@ Before we deploy the extension, we need to install its dependencies and compile 
 
 ```shell
 npm install
-npm run compile:dev
+webpack --mode development
 ```
 
 ### Deploy your dev extension to Azure DevOps
