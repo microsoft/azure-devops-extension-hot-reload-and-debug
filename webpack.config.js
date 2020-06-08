@@ -13,12 +13,12 @@ module.exports = {
   entry: entries,
   output: {
     filename: "[name]/[name].js",
-    publicPath: "/dist/"
   },
   devtool: "inline-source-map",
   devServer: {
     https: true,
-    port: 3000
+    port: 3000,
+    publicPath: "/dist/"
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"],
