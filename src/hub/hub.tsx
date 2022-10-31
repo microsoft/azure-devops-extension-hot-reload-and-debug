@@ -1,14 +1,14 @@
+import "azure-devops-ui/Core/override.css";
 import "./hub.scss";
 
-import * as React from "react";
-import * as ReactDOM from "react-dom";
 import * as SDK from "azure-devops-extension-sdk";
 import { Dialog } from "azure-devops-ui/Dialog";
 import { Header } from "azure-devops-ui/Header";
-import { Image } from "azure-devops-ui/Image";
 import { Page } from "azure-devops-ui/Page";
 import { Panel } from "azure-devops-ui/Panel";
 import { ZeroData, ZeroDataActionType } from "azure-devops-ui/ZeroData";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
 
 interface IHubState {
   dialogShown: boolean;
@@ -45,7 +45,7 @@ class Hub extends React.Component<{}, IHubState> {
           ]}
         />
         <ZeroData
-          imagePath="../../img/world.png"
+          iconProps={{ iconName: "World" }}
           imageAltText="World image"
           primaryText="Hot Reload and Debug!"
           secondaryText={
@@ -78,10 +78,9 @@ class Hub extends React.Component<{}, IHubState> {
               }
             ]}
           >
-            <Image
-              className="content"
-              alt="World image"
-              src="../../img/world.png"
+            <ZeroData
+              iconProps={{ iconName: "World" }}
+              imageAltText="World image"
             />
           </Dialog>
         )}
@@ -97,10 +96,10 @@ class Hub extends React.Component<{}, IHubState> {
               }
             ]}
           >
-            <Image
-              className="content"
-              alt="World image"
-              src="../../img/world.png"
+            <ZeroData
+              iconProps={{ iconName: "World" }}
+              imageAltText="World image"
+              className="flex-grow"
             />
           </Panel>
         )}

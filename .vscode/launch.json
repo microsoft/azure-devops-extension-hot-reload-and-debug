@@ -9,8 +9,8 @@
       "reAttach": true,
       "pathMappings": [
         {
-          "url": "webpack:///",
-          "path": "${workspaceFolder}/"
+          "url": "webpack://hot-reload-and-debug/src",
+          "path": "${workspaceFolder}/src"
         }
       ]
     },

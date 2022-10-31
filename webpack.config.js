@@ -2,67 +2,49 @@ const path = require("path");
 const fs = require("fs");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const entries = {};
-const srcDir = path.join(__dirname, "src");
-fs.readdirSync(srcDir)
-  .filter(dir => fs.statSync(path.join(srcDir, dir)).isDirectory())
-  .forEach(dir => (entries[dir] = "./" + path.join("src", dir, dir)));
+const entries = fs
+  .readdirSync(path.join(__dirname, "src"))
+  .filter((dir) => fs.statSync(path.join("src", dir)).isDirectory())
+  .reduce((acc, dir) => ({ ...acc, [dir]: `./src/${dir}/${dir}` }), {});
 
 module.exports = {
-  target: "web",
   entry: entries,
+  devtool: "inline-source-map",
   output: {
     filename: "[name]/[name].js",
+    publicPath: "/dist/",
   },
-  devtool: "inline-source-map",
   devServer: {
     https: true,
     port: 3000,
-    publicPath: "/dist/"
   },
-  resolve: {
-    extensions: [".ts", ".tsx", ".js"],
-    alias: {
-      "azure-devops-extension-sdk": path.resolve(
-        "node_modules/azure-devops-extension-sdk"
-      )
-    }
-  },
-  stats: {
-    warnings: false
-  },
+  plugins: [
+    new CopyWebpackPlugin({
+      patterns: [{ from: "**/*.html", context: "src" }],
+    }),
+  ],
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: "ts-loader"
+        test: /\.(ts|tsx)$/i,
+        loader: "ts-loader",
+        exclude: ["/node_modules/"],
       },
       {
-        test: /\.scss$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "azure-devops-ui/buildScripts/css-variables-loader",
-          "sass-loader"
-        ]
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        test: /\.s[ac]ss$/i,
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
-        test: /\.woff$/,
-        use: [
-          {
-            loader: "base64-inline-loader"
-          }
-        ]
+        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        type: "asset",
       },
-      {
-        test: /\.html$/,
-        use: "file-loader"
-      }
-    ]
+    ],
   },
-  plugins: [new CopyWebpackPlugin([{ from: "**/*.html", context: "src" }])]
+  resolve: {
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
+  },
 };
