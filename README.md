@@ -1,7 +1,5 @@
 # Azure DevOps Extension Hot Reload and Debug
 
-[![Build Status](https://dev.azure.com/1es-cat/azure-devops-extension-hot-reload-and-debug/_apis/build/status/microsoft.azure-devops-extension-hot-reload-and-debug?branchName=master)](https://dev.azure.com/1es-cat/azure-devops-extension-hot-reload-and-debug/_build/latest?definitionId=26&branchName=master)
-
 This repository demonstrates how to load an Azure DevOps extension's code directly from the dev machine rather than bundle all the code and deploy it through the marketplace. We will leverage the (somewhat hidden) capability in Azure DevOps to load content from localhost, which will enable us to use hot reload and debug in VS Code.
 
 For more information about our motivation in developing this project, see our blog post.
@@ -79,8 +77,8 @@ module.exports = {
   devtool: "inline-source-map",
   devServer: {
     https: true,
-    port: 3000
-  }
+    port: 3000,
+  },
   // ...
 };
 ```
@@ -92,16 +90,16 @@ By default, webpack serves its compiled, in-memory files directly under `localho
 ```js
 module.exports = {
   output: {
-    publicPath: "/dist/"
+    publicPath: "/dist/",
     // ...
-  }
+  },
   // ...
 };
 ```
 
 > Your extension may load fine without this change because webpack will serve files from the filesystem if it does not have an in-memory version to serve instead. Therefore, webpack may serve files from the `dist` folder if it exists, but hot reload will not work.
 
-In order to make webpack copy HTML files from the `src` folder to the `dist` folder, you need to add the `copy-webpack-plugin` npm package to your project, and then add the following lines to your `webpack.config.json` file.  These changes will configure webpack to copy all HTML files from `src`:
+In order to make webpack copy HTML files from the `src` folder to the `dist` folder, you need to add the `copy-webpack-plugin` npm package to your project, and then add the following lines to your `webpack.config.json` file. These changes will configure webpack to copy all HTML files from `src`:
 
 ```js
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -195,7 +193,7 @@ If you want to start a new extension project, check out the [Yeoman generator](h
 
 ## Contributing
 
-This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
+This project welcomes contributions and suggestions. Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us the rights to use your contribution. For details, visit <https://cla.microsoft.com>.
 
 When you submit a pull request, a CLA-bot will automatically determine whether you need to provide a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions provided by the bot. You will only need to do this once across all repos using our CLA.
 

@@ -8,8 +8,8 @@ module.exports = {
       "javascript",
       "javascriptreact",
       "typescript",
-      "typescriptreact"
+      "typescriptreact",
     ],
-    semi: "always"
-  }
+    semi: "always",
+  },
 };
