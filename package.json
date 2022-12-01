@@ -29,7 +29,7 @@
     "@types/react": "^16.14.34",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
-    "@webpack-cli/generators": "^2.5.0",
+    "@webpack-cli/generators": "^3.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "eslint-config-prettier": "^8.5.0",
