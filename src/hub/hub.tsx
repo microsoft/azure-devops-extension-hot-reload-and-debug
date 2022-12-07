@@ -40,7 +40,7 @@ class Hub extends React.Component<{}, IHubState> {
               iconProps: {
                 iconName: "World"
               },
-              onActivate: this.openPanel.bind(this)
+              onActivate: () => this.togglePanel()
             }
           ]}
         />
@@ -63,18 +63,18 @@ class Hub extends React.Component<{}, IHubState> {
           }
           actionText="Open Dialog"
           actionType={ZeroDataActionType.ctaButton}
-          onActionClick={this.openDialog.bind(this)}
+          onActionClick={() => this.toggleDialog()}
         />
         {this.state.dialogShown && (
           <Dialog
             className="flex-wrap"
             titleProps={{ text: "Hello Dialog!" }}
-            onDismiss={this.closeDialog.bind(this)}
+            onDismiss={() => this.toggleDialog()}
             footerButtonProps={[
               {
                 text: "Close",
                 primary: true,
-                onClick: this.closeDialog.bind(this)
+                onClick: () => this.toggleDialog()
               }
             ]}
           >
@@ -87,12 +87,12 @@ class Hub extends React.Component<{}, IHubState> {
         {this.state.panelShown && (
           <Panel
             titleProps={{ text: "Hello Panel!" }}
-            onDismiss={this.closePanel.bind(this)}
+            onDismiss={() => this.togglePanel()}
             footerButtonProps={[
               {
-                text: "close",
+                text: "Close",
                 primary: true,
-                onClick: this.closePanel.bind(this)
+                onClick: () => this.togglePanel()
               }
             ]}
           >
@@ -107,20 +107,12 @@ class Hub extends React.Component<{}, IHubState> {
     );
   }
 
-  private openDialog(): void {
-    this.setState({ dialogShown: true });
+  private toggleDialog(): void {
+    this.setState({ dialogShown: !this.state.dialogShown });
   }
 
-  private closeDialog(): void {
-    this.setState({ dialogShown: false });
-  }
-
-  private openPanel(): void {
-    this.setState({ panelShown: true });
-  }
-
-  private closePanel(): void {
-    this.setState({ panelShown: false });
+  private togglePanel(): void {
+    this.setState({ panelShown: !this.state.panelShown });
   }
 }
 
