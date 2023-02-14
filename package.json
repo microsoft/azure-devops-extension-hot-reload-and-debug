@@ -31,7 +31,7 @@
     "@typescript-eslint/parser": "^5.48.1",
     "@webpack-cli/generators": "^3.0.0",
     "copy-webpack-plugin": "^11.0.0",
-    "css-loader": "^6.7.1",
+    "css-loader": "^6.7.3",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint": "^8.26.0",
