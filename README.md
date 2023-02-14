@@ -123,7 +123,7 @@ The last configuration change we need to make is to set up a debug configuration
       "name": "Launch Firefox",
       "type": "firefox",
       "request": "launch",
-      "url": "https://localhost:3000/",
+      "url": "https://localhost:3000/dist/hub/hub.html",
       "reAttach": true,
       "pathMappings": [
         {
@@ -169,7 +169,7 @@ Start the webpack-dev-server with:
 webpack-dev-server --mode development
 ```
 
-Now if you go to `localhost:3000` in your browser, you should get an untrusted certificate error page. Select **Advanced** and then select **Accept the Risk and Continue**.
+Now if you go to <https://localhost:3000/dist/hub/hub.html> in your browser, you should get an untrusted certificate error page. Select **Advanced** and then select **Accept the Risk and Continue**.
 
 Go back to Azure DevOps and reload. Your extension should now load correctly and any changes to the source code will cause webpack to recompile and reload the extension automatically.
 
