@@ -39,7 +39,7 @@
     "prettier": "^2.8.8",
     "rimraf": "^4.1.2",
     "sass-loader": "^13.2.0",
-    "style-loader": "^3.3.1",
+    "style-loader": "^3.3.2",
     "tfx-cli": "^0.14.0",
     "ts-loader": "^9.4.2",
     "typescript": "^5.0.4",
