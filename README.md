@@ -106,7 +106,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 // ...
 
 module.exports = {
-  plugins: [new CopyWebpackPlugin([{ from: "**/*.html", context: "src" }])],
+  plugins: [new CopyWebpackPlugin({ patterns: [{ from: "**/*.html", context: "src"}] })],
   // ...
 };
 ```
