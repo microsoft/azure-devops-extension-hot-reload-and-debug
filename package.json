@@ -18,33 +18,33 @@
     "start:dev": "webpack-dev-server --mode development"
   },
   "dependencies": {
-    "azure-devops-extension-api": "^2.222.0",
+    "azure-devops-extension-api": "^2.224.0",
     "azure-devops-extension-sdk": "^3.1.2",
-    "azure-devops-ui": "^2.167.75",
-    "react-dom": "^16.14.0",
-    "react": "^16.14.0"
+    "azure-devops-ui": "^2.167.79",
+    "react-dom": "^18.2.0",
+    "react": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react-dom": "^16.9.17",
-    "@types/react": "^16.14.34",
-    "@typescript-eslint/eslint-plugin": "^5.61.0",
-    "@typescript-eslint/parser": "^5.61.0",
+    "@types/react-dom": "^18.2.7",
+    "@types/react": "^18.2.21",
+    "@typescript-eslint/eslint-plugin": "^6.5.0",
+    "@typescript-eslint/parser": "^6.5.0",
     "@webpack-cli/generators": "^3.0.7",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.8.1",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint": "^8.48.0",
     "node-sass": "^9.0.0",
-    "prettier": "^3.0.0",
+    "prettier": "^3.0.3",
     "rimraf": "^5.0.1",
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
-    "tfx-cli": "^0.15.0",
+    "tfx-cli": "^0.16.0",
     "ts-loader": "^9.4.4",
-    "typescript": "^5.1.6",
+    "typescript": "^5.2.2",
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.15.1",
-    "webpack": "^5.88.1"
+    "webpack": "^5.88.2"
   }
 }
