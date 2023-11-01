@@ -41,7 +41,7 @@
     "sass-loader": "^13.3.2",
     "style-loader": "^3.3.3",
     "tfx-cli": "^0.15.0",
-    "ts-loader": "^9.4.4",
+    "ts-loader": "^9.5.0",
     "typescript": "^5.1.6",
     "webpack-cli": "^5.0.0",
     "webpack-dev-server": "^4.15.1",
